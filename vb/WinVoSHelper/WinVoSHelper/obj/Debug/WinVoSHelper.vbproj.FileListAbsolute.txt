@@ -1,0 +1,15 @@
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WinVoSHelper.vbprojResolveAssemblyReference.cache
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.tracker.resources
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WinVoSHelper.vbproj.GenerateResource.Cache
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WinVoSHelper\WinVoSHelper\bin\Debug\WindowsApplication1.exe.config
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.exe
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.xml
+C:\Users\Nat\Documents\Visual Studio 2015\Projects\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.pdb
