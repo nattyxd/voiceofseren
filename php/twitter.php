@@ -13,7 +13,7 @@
 
   $time = time();
 
-  if ((date('i') > 0) && (isAPIDataOld() === true) || ($override === 1)){
+  if ((date('i') > 55) && (isAPIDataOld() === true) || ($override === 1)){
     // echo "Condition Successful: Will perform an API call. <br />";
     doTwitter();
   }

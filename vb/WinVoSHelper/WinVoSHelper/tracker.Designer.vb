@@ -32,6 +32,8 @@ Partial Class tracker
         Me.chk_Trahaearn = New System.Windows.Forms.CheckBox()
         Me.chk_Meilyr = New System.Windows.Forms.CheckBox()
         Me.tracktime = New System.Windows.Forms.Timer(Me.components)
+        Me.browser = New System.Windows.Forms.WebBrowser()
+        Me.epochBrowser = New System.Windows.Forms.WebBrowser()
         Me.SuspendLayout()
         '
         'chk_Amlodd
@@ -119,11 +121,33 @@ Partial Class tracker
         Me.tracktime.Enabled = True
         Me.tracktime.Interval = 1000
         '
+        'browser
+        '
+        Me.browser.Location = New System.Drawing.Point(69, 225)
+        Me.browser.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.browser.Name = "browser"
+        Me.browser.Size = New System.Drawing.Size(35, 20)
+        Me.browser.TabIndex = 8
+        Me.browser.Url = New System.Uri("http://www.polishedinter.net/jagex/twitter.php", System.UriKind.Absolute)
+        Me.browser.Visible = False
+        '
+        'epochBrowser
+        '
+        Me.epochBrowser.Location = New System.Drawing.Point(0, 230)
+        Me.epochBrowser.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.epochBrowser.Name = "epochBrowser"
+        Me.epochBrowser.Size = New System.Drawing.Size(45, 20)
+        Me.epochBrowser.TabIndex = 9
+        Me.epochBrowser.Url = New System.Uri("http://www.polishedinter.net/jagex/epoch.php", System.UriKind.Absolute)
+        Me.epochBrowser.Visible = False
+        '
         'tracker
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(102, 302)
+        Me.ClientSize = New System.Drawing.Size(99, 197)
+        Me.Controls.Add(Me.epochBrowser)
+        Me.Controls.Add(Me.browser)
         Me.Controls.Add(Me.chk_Meilyr)
         Me.Controls.Add(Me.chk_Trahaearn)
         Me.Controls.Add(Me.chk_Ithell)
@@ -133,6 +157,8 @@ Partial Class tracker
         Me.Controls.Add(Me.chk_Cadarn)
         Me.Controls.Add(Me.chk_Amlodd)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "tracker"
         Me.Opacity = 0.6R
         Me.ShowIcon = False
@@ -152,4 +178,6 @@ Partial Class tracker
     Friend WithEvents chk_Meilyr As CheckBox
     Friend WithEvents tracktime As Timer
     Friend WithEvents chk_Trahaearn As CheckBox
+    Friend WithEvents browser As WebBrowser
+    Friend WithEvents epochBrowser As WebBrowser
 End Class
