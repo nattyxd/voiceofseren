@@ -27,6 +27,9 @@
 
         If browserString = oldBrowserText Then
             forceEarlyRefresh = True
+            Exit Sub
+        Else
+            forceEarlyRefresh = False
         End If
         ' Loop through every checkbox and restore them to their default state
         Dim SingleControl As Control
@@ -76,6 +79,10 @@
             notify.BalloonTipIcon = ToolTipIcon.Info
             notify.BalloonTipTitle = "Voice of Seren Update"
             notify.ShowBalloonTip(2000)
+
+            ' load text into a var at the end so we can only update if the text really is old
+            oldBrowserText = browser.DocumentText
+
         End If
     End Sub
     Public Function HaveInternetConnection() As Boolean
@@ -155,9 +162,11 @@
             notify.BalloonTipText = "Clan Trahaearn has forgotten about your pickpocketing"
         End If
 
-        If Not oldBalloon = notify.BalloonTipText Then 'something got updated
-            notify.BalloonTipTitle = "Clan Information"
-            notify.ShowBalloonTip(2000)
+        If AlertMeWhenClansForgetToolStripMenuItem.CheckState = CheckState.Checked Then
+            If Not oldBalloon = notify.BalloonTipText Then 'something got updated
+                notify.BalloonTipTitle = "Clan Information"
+                notify.ShowBalloonTip(2000)
+            End If
         End If
     End Sub
     Private Sub tracker_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -173,7 +182,6 @@
         If Not IsNothing(browser) Then
             If Not IsNothing(browser.DocumentText) Then
                 ProcessSuccessfulRequest()
-                oldBrowserText = browser.DocumentText
             End If
         End If
     End Sub
@@ -244,5 +252,70 @@
             HideAppToolStripMenuItem.CheckState = CheckState.Checked
             Me.Visible = False
         End If
+    End Sub
+
+    Private Sub AlertMeWhenClansForgetToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AlertMeWhenClansForgetToolStripMenuItem.Click
+        If AlertMeWhenClansForgetToolStripMenuItem.CheckState = CheckState.Checked Then
+            AlertMeWhenClansForgetToolStripMenuItem.CheckState = CheckState.Unchecked
+            Me.Visible = True
+        Else
+            AlertMeWhenClansForgetToolStripMenuItem.CheckState = CheckState.Checked
+            Me.Visible = False
+        End If
+    End Sub
+
+    Private Sub ExitAppToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitAppToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub TransparentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TransparentToolStripMenuItem.Click
+        Me.TransparencyKey = Color.DarkGray
+        Me.BackColor = Color.DarkGray
+    End Sub
+
+    Private Sub DefaultToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DefaultToolStripMenuItem.Click
+        Me.BackColor = SystemColors.Control
+    End Sub
+
+    Private Sub RuneScapeBlueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RuneScapeBlueToolStripMenuItem.Click
+        Me.BackColor = Color.FromArgb(12, 26, 35)
+    End Sub
+
+    Private Sub BlackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BlackToolStripMenuItem.Click
+        Me.BackColor = Color.Black
+    End Sub
+
+    Private Sub WhiteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WhiteToolStripMenuItem.Click
+        Me.BackColor = Color.White
+    End Sub
+
+    Private Sub BlackToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BlackToolStripMenuItem1.Click
+        Dim SingleControl As Control
+        For Each SingleControl In Me.Controls
+            Dim chk As CheckBox = TryCast(SingleControl, CheckBox)
+            If chk IsNot Nothing Then
+                chk.ForeColor = Color.Black
+            End If
+        Next
+    End Sub
+
+    Private Sub WhiteToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles WhiteToolStripMenuItem1.Click
+        Dim SingleControl As Control
+        For Each SingleControl In Me.Controls
+            Dim chk As CheckBox = TryCast(SingleControl, CheckBox)
+            If chk IsNot Nothing Then
+                chk.ForeColor = Color.White
+            End If
+        Next
+    End Sub
+
+    Private Sub RuneScapeBlueToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RuneScapeBlueToolStripMenuItem1.Click
+        Dim SingleControl As Control
+        For Each SingleControl In Me.Controls
+            Dim chk As CheckBox = TryCast(SingleControl, CheckBox)
+            If chk IsNot Nothing Then
+                chk.ForeColor = Color.FromArgb(12, 26, 35)
+            End If
+        Next
     End Sub
 End Class

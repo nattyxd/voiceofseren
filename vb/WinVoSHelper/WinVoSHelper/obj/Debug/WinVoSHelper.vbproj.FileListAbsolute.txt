@@ -13,16 +13,15 @@ C:\Users\Nat\Documents\Visual Studio 2015\Projects\WinVoSHelper\WinVoSHelper\bin
 C:\Users\Nat\Documents\Visual Studio 2015\Projects\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.exe
 C:\Users\Nat\Documents\Visual Studio 2015\Projects\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.xml
 C:\Users\Nat\Documents\Visual Studio 2015\Projects\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.pdb
-C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Debug\WindowsApplication1.exe.config
-C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.exe
-C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.xml
-C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.pdb
-C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Debug\WindowsApplication1.exe
-C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Debug\WindowsApplication1.pdb
-C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Debug\WindowsApplication1.xml
 C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WinVoSHelper.vbprojResolveAssemblyReference.cache
-C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.tracker.resources
-C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.Resources.resources
 C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WinVoSHelper.vbproj.GenerateResource.Cache
-C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.transparency.resources
 C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Debug\winvoshelper.exe.config
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Debug\winvoshelper.exe
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Debug\winvoshelper.pdb
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Debug\winvoshelper.xml
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\winvoshelper.tracker.resources
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\winvoshelper.Resources.resources
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\winvoshelper.transparency.resources
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\winvoshelper.exe
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\winvoshelper.xml
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\winvoshelper.pdb

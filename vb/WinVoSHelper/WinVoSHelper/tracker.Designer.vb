@@ -37,9 +37,21 @@ Partial Class tracker
         Me.epochBrowser = New System.Windows.Forms.WebBrowser()
         Me.notify = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.notifyContext = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.BackgroundColourToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TransparentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DefaultToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RuneScapeBlueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BlackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WhiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.alertOnUpdate = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AlertMeWhenClansForgetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetTransparencyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HideAppToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitAppToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TextColourToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BlackToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WhiteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RuneScapeBlueToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyContext.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -175,11 +187,48 @@ Partial Class tracker
         'notifyContext
         '
         Me.notifyContext.AllowMerge = False
-        Me.notifyContext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.alertOnUpdate, Me.SetTransparencyToolStripMenuItem, Me.HideAppToolStripMenuItem})
+        Me.notifyContext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackgroundColourToolStripMenuItem, Me.TextColourToolStripMenuItem, Me.alertOnUpdate, Me.AlertMeWhenClansForgetToolStripMenuItem, Me.SetTransparencyToolStripMenuItem, Me.HideAppToolStripMenuItem, Me.ExitAppToolStripMenuItem})
         Me.notifyContext.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.notifyContext.Name = "notifyContext"
         Me.notifyContext.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.notifyContext.Size = New System.Drawing.Size(221, 92)
+        Me.notifyContext.Size = New System.Drawing.Size(315, 158)
+        '
+        'BackgroundColourToolStripMenuItem
+        '
+        Me.BackgroundColourToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TransparentToolStripMenuItem, Me.DefaultToolStripMenuItem, Me.RuneScapeBlueToolStripMenuItem, Me.BlackToolStripMenuItem, Me.WhiteToolStripMenuItem})
+        Me.BackgroundColourToolStripMenuItem.Name = "BackgroundColourToolStripMenuItem"
+        Me.BackgroundColourToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
+        Me.BackgroundColourToolStripMenuItem.Text = "Background Colour"
+        '
+        'TransparentToolStripMenuItem
+        '
+        Me.TransparentToolStripMenuItem.Name = "TransparentToolStripMenuItem"
+        Me.TransparentToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.TransparentToolStripMenuItem.Text = "Transparent"
+        '
+        'DefaultToolStripMenuItem
+        '
+        Me.DefaultToolStripMenuItem.Name = "DefaultToolStripMenuItem"
+        Me.DefaultToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.DefaultToolStripMenuItem.Text = "Default"
+        '
+        'RuneScapeBlueToolStripMenuItem
+        '
+        Me.RuneScapeBlueToolStripMenuItem.Name = "RuneScapeBlueToolStripMenuItem"
+        Me.RuneScapeBlueToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.RuneScapeBlueToolStripMenuItem.Text = "RuneScape Blue"
+        '
+        'BlackToolStripMenuItem
+        '
+        Me.BlackToolStripMenuItem.Name = "BlackToolStripMenuItem"
+        Me.BlackToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.BlackToolStripMenuItem.Text = "Black"
+        '
+        'WhiteToolStripMenuItem
+        '
+        Me.WhiteToolStripMenuItem.Name = "WhiteToolStripMenuItem"
+        Me.WhiteToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.WhiteToolStripMenuItem.Text = "White"
         '
         'alertOnUpdate
         '
@@ -187,20 +236,59 @@ Partial Class tracker
         Me.alertOnUpdate.CheckOnClick = True
         Me.alertOnUpdate.CheckState = System.Windows.Forms.CheckState.Checked
         Me.alertOnUpdate.Name = "alertOnUpdate"
-        Me.alertOnUpdate.Size = New System.Drawing.Size(220, 22)
+        Me.alertOnUpdate.Size = New System.Drawing.Size(314, 22)
         Me.alertOnUpdate.Text = "Alert me when VoS changes"
+        '
+        'AlertMeWhenClansForgetToolStripMenuItem
+        '
+        Me.AlertMeWhenClansForgetToolStripMenuItem.Checked = True
+        Me.AlertMeWhenClansForgetToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.AlertMeWhenClansForgetToolStripMenuItem.Name = "AlertMeWhenClansForgetToolStripMenuItem"
+        Me.AlertMeWhenClansForgetToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
+        Me.AlertMeWhenClansForgetToolStripMenuItem.Text = "Alert me when clans forget my Pickpocketing"
         '
         'SetTransparencyToolStripMenuItem
         '
         Me.SetTransparencyToolStripMenuItem.Name = "SetTransparencyToolStripMenuItem"
-        Me.SetTransparencyToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
+        Me.SetTransparencyToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
         Me.SetTransparencyToolStripMenuItem.Text = "Set Transparency"
         '
         'HideAppToolStripMenuItem
         '
         Me.HideAppToolStripMenuItem.Name = "HideAppToolStripMenuItem"
-        Me.HideAppToolStripMenuItem.Size = New System.Drawing.Size(220, 22)
+        Me.HideAppToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
         Me.HideAppToolStripMenuItem.Text = "Hide App"
+        '
+        'ExitAppToolStripMenuItem
+        '
+        Me.ExitAppToolStripMenuItem.Name = "ExitAppToolStripMenuItem"
+        Me.ExitAppToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
+        Me.ExitAppToolStripMenuItem.Text = "Exit App"
+        '
+        'TextColourToolStripMenuItem
+        '
+        Me.TextColourToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BlackToolStripMenuItem1, Me.WhiteToolStripMenuItem1, Me.RuneScapeBlueToolStripMenuItem1})
+        Me.TextColourToolStripMenuItem.Name = "TextColourToolStripMenuItem"
+        Me.TextColourToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
+        Me.TextColourToolStripMenuItem.Text = "Text Colour"
+        '
+        'BlackToolStripMenuItem1
+        '
+        Me.BlackToolStripMenuItem1.Name = "BlackToolStripMenuItem1"
+        Me.BlackToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
+        Me.BlackToolStripMenuItem1.Text = "Black"
+        '
+        'WhiteToolStripMenuItem1
+        '
+        Me.WhiteToolStripMenuItem1.Name = "WhiteToolStripMenuItem1"
+        Me.WhiteToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
+        Me.WhiteToolStripMenuItem1.Text = "White"
+        '
+        'RuneScapeBlueToolStripMenuItem1
+        '
+        Me.RuneScapeBlueToolStripMenuItem1.Name = "RuneScapeBlueToolStripMenuItem1"
+        Me.RuneScapeBlueToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
+        Me.RuneScapeBlueToolStripMenuItem1.Text = "RuneScape Blue"
         '
         'tracker
         '
@@ -224,7 +312,7 @@ Partial Class tracker
         Me.Name = "tracker"
         Me.Opacity = 0.7R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Tracker"
+        Me.Text = "VoS Tracker"
         Me.TopMost = True
         Me.notifyContext.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -248,4 +336,16 @@ Partial Class tracker
     Friend WithEvents alertOnUpdate As ToolStripMenuItem
     Friend WithEvents SetTransparencyToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HideAppToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AlertMeWhenClansForgetToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitAppToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BackgroundColourToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TransparentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DefaultToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RuneScapeBlueToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BlackToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WhiteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TextColourToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BlackToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents WhiteToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents RuneScapeBlueToolStripMenuItem1 As ToolStripMenuItem
 End Class

@@ -1,0 +1,11 @@
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Release\winvoshelper.exe.config
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Release\winvoshelper.exe
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Release\winvoshelper.pdb
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Release\winvoshelper.xml
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\winvoshelper.tracker.resources
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\winvoshelper.Resources.resources
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\winvoshelper.transparency.resources
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\WinVoSHelper.vbproj.GenerateResource.Cache
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\winvoshelper.exe
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\winvoshelper.xml
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\winvoshelper.pdb

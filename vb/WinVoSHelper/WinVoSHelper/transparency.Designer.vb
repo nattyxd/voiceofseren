@@ -37,9 +37,9 @@ Partial Class transparency
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(13, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(105, 13)
+        Me.Label1.Size = New System.Drawing.Size(76, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Select Transparency"
+        Me.Label1.Text = "Select Opacity"
         '
         'trackBar
         '
@@ -105,7 +105,7 @@ Partial Class transparency
         Me.Name = "transparency"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Select Transparency"
+        Me.Text = "Select Opacity"
         CType(Me.trackBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
