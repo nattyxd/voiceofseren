@@ -9,3 +9,4 @@ C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Rele
 C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\winvoshelper.exe
 C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\winvoshelper.xml
 C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\winvoshelper.pdb
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Release\WinVoSHelper.vbprojResolveAssemblyReference.cache

@@ -2,6 +2,7 @@
     Dim updateSecond As Integer = 0 ' 0 if check failed, 5 if clock is accurate, 30 if clock is within greater tolerance (25s)
     Dim haveInternet = 0
     Dim syncFlag = 1 ' 0 if the system clock is really accurate, 1 if it's slightly off, and 2 if it's totally off. Default to 1
+    Dim enviroString As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\voshelper.txt"
     Dim oldBrowserText As String = "" ' Allows us to compare the old to the new value to see if we need to refresh again
     Dim forceEarlyRefresh As Boolean = False
     Dim amloddTime As Integer
@@ -12,6 +13,10 @@
     Dim ithellTime As Integer
     Dim meilyrTime As Integer
     Dim trahaearnTime As Integer
+    Dim bgColor As Integer = 1
+    Dim txtColor As Integer = 0
+    Dim vosAlerts As Boolean
+    Dim forgetAlerts As Boolean
     Public Shared Function GetUnixTimestamp() As Long ' Use Int64, not interested in decimal places
         Return (My.Computer.Clock.GmtTime - New DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalSeconds ' Calculate seconds since UNIX epoch.
     End Function
@@ -257,10 +262,8 @@
     Private Sub AlertMeWhenClansForgetToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AlertMeWhenClansForgetToolStripMenuItem.Click
         If AlertMeWhenClansForgetToolStripMenuItem.CheckState = CheckState.Checked Then
             AlertMeWhenClansForgetToolStripMenuItem.CheckState = CheckState.Unchecked
-            Me.Visible = True
         Else
             AlertMeWhenClansForgetToolStripMenuItem.CheckState = CheckState.Checked
-            Me.Visible = False
         End If
     End Sub
 
@@ -271,22 +274,27 @@
     Private Sub TransparentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TransparentToolStripMenuItem.Click
         Me.TransparencyKey = Color.DarkGray
         Me.BackColor = Color.DarkGray
+        bgColor = 0
     End Sub
 
     Private Sub DefaultToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DefaultToolStripMenuItem.Click
         Me.BackColor = SystemColors.Control
+        bgColor = 1
     End Sub
 
     Private Sub RuneScapeBlueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RuneScapeBlueToolStripMenuItem.Click
         Me.BackColor = Color.FromArgb(12, 26, 35)
+        bgColor = 2
     End Sub
 
     Private Sub BlackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BlackToolStripMenuItem.Click
         Me.BackColor = Color.Black
+        bgColor = 3
     End Sub
 
     Private Sub WhiteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WhiteToolStripMenuItem.Click
         Me.BackColor = Color.White
+        bgColor = 4
     End Sub
 
     Private Sub BlackToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BlackToolStripMenuItem1.Click
@@ -297,6 +305,7 @@
                 chk.ForeColor = Color.Black
             End If
         Next
+        txtColor = 0
     End Sub
 
     Private Sub WhiteToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles WhiteToolStripMenuItem1.Click
@@ -307,5 +316,103 @@
                 chk.ForeColor = Color.White
             End If
         Next
+        txtColor = 1
+    End Sub
+
+    Private Sub ShowIconOnTaskbarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowIconOnTaskbarToolStripMenuItem.Click
+        If ShowIconOnTaskbarToolStripMenuItem.CheckState = CheckState.Checked Then
+            ShowIconOnTaskbarToolStripMenuItem.CheckState = CheckState.Unchecked
+            Me.ShowInTaskbar = False
+        Else
+            ShowIconOnTaskbarToolStripMenuItem.CheckState = CheckState.Checked
+            Me.ShowInTaskbar = True
+        End If
+    End Sub
+    Private Sub tracker_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        ' user closed form. Write their settings to environment
+        Dim strToWrite As String = ""
+
+        ' go through everything we want to check and add it to a string
+
+        'first check if we should notify 
+        If AlertMeWhenClansForgetToolStripMenuItem.CheckState = CheckState.Checked Then
+            strToWrite = strToWrite & "1"
+        Else
+            strToWrite = strToWrite & "0"
+        End If
+
+        ' check if they want vos updates
+        If alertOnUpdate.CheckState = CheckState.Checked Then
+            strToWrite = strToWrite & "1"
+        Else
+            strToWrite = strToWrite & "0"
+        End If
+
+        'check what the background colour is
+        strToWrite = strToWrite & bgColor
+
+        'check what the textcolor is
+        strToWrite = strToWrite & txtColor
+
+        ' add the opacity
+        strToWrite = strToWrite & Me.Opacity
+
+        ' add whether or not we show on the taskbar
+        If ShowIconOnTaskbarToolStripMenuItem.CheckState = CheckState.Checked Then
+            strToWrite = strToWrite & "1"
+        Else
+            strToWrite = strToWrite & "0"
+        End If
+
+        ' finally write the contents to file
+        My.Computer.FileSystem.WriteAllText(enviroString, strToWrite, False)
+    End Sub
+
+    Private Sub tracker_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' on load check if we have the settings file and if we do load settings from it
+        Try
+            If My.Computer.FileSystem.FileExists(enviroString) Then
+                Dim infoTxt As String = My.Computer.FileSystem.ReadAllText(enviroString)
+
+                If infoTxt.Chars(0) = "0" Then
+                    AlertMeWhenClansForgetToolStripMenuItem_Click(sender, e)
+                End If
+
+                If infoTxt.Chars(1) = "0" Then
+                    alertOnUpdate.CheckState = CheckState.Unchecked
+                End If
+
+                Select Case infoTxt.Chars(2)
+                    Case "0"
+                        TransparentToolStripMenuItem_Click(sender, e)
+                    Case "1"
+                    'don't need to do anything
+                    Case "2"
+                        RuneScapeBlueToolStripMenuItem_Click(sender, e)
+                    Case "3"
+                        BlackToolStripMenuItem_Click(sender, e)
+                    Case "4"
+                        WhiteToolStripMenuItem_Click(sender, e)
+                End Select
+
+                If infoTxt(3) = "1" Then
+                    WhiteToolStripMenuItem1_Click(sender, e)
+                End If
+
+                If Not infoTxt(4) = "1" Then
+                    Dim opacityStr As String = infoTxt(4) & "." & infoTxt(6) & infoTxt(7)
+                    Me.Opacity = System.Convert.ToDecimal(opacityStr)
+                Else
+                    Me.Opacity = 1
+                End If
+
+                If infoTxt(infoTxt.Length - 1) = "1" Then
+                    ShowIconOnTaskbarToolStripMenuItem_Click(sender, e)
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("Error occured while loading your presets. You will have to reselect options.", MsgBoxStyle.Information, "Couldn't load presets")
+        End Try
+
     End Sub
 End Class
