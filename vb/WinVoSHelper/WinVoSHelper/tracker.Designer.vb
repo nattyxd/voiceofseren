@@ -43,15 +43,14 @@ Partial Class tracker
         Me.RuneScapeBlueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BlackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WhiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TextColourToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BlackToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WhiteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.alertOnUpdate = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlertMeWhenClansForgetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetTransparencyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HideAppToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitAppToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextColourToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BlackToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WhiteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RuneScapeBlueToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyContext.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -230,6 +229,25 @@ Partial Class tracker
         Me.WhiteToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
         Me.WhiteToolStripMenuItem.Text = "White"
         '
+        'TextColourToolStripMenuItem
+        '
+        Me.TextColourToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BlackToolStripMenuItem1, Me.WhiteToolStripMenuItem1})
+        Me.TextColourToolStripMenuItem.Name = "TextColourToolStripMenuItem"
+        Me.TextColourToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
+        Me.TextColourToolStripMenuItem.Text = "Text Colour"
+        '
+        'BlackToolStripMenuItem1
+        '
+        Me.BlackToolStripMenuItem1.Name = "BlackToolStripMenuItem1"
+        Me.BlackToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.BlackToolStripMenuItem1.Text = "Black"
+        '
+        'WhiteToolStripMenuItem1
+        '
+        Me.WhiteToolStripMenuItem1.Name = "WhiteToolStripMenuItem1"
+        Me.WhiteToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.WhiteToolStripMenuItem1.Text = "White"
+        '
         'alertOnUpdate
         '
         Me.alertOnUpdate.Checked = True
@@ -264,31 +282,6 @@ Partial Class tracker
         Me.ExitAppToolStripMenuItem.Name = "ExitAppToolStripMenuItem"
         Me.ExitAppToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
         Me.ExitAppToolStripMenuItem.Text = "Exit App"
-        '
-        'TextColourToolStripMenuItem
-        '
-        Me.TextColourToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BlackToolStripMenuItem1, Me.WhiteToolStripMenuItem1, Me.RuneScapeBlueToolStripMenuItem1})
-        Me.TextColourToolStripMenuItem.Name = "TextColourToolStripMenuItem"
-        Me.TextColourToolStripMenuItem.Size = New System.Drawing.Size(314, 22)
-        Me.TextColourToolStripMenuItem.Text = "Text Colour"
-        '
-        'BlackToolStripMenuItem1
-        '
-        Me.BlackToolStripMenuItem1.Name = "BlackToolStripMenuItem1"
-        Me.BlackToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
-        Me.BlackToolStripMenuItem1.Text = "Black"
-        '
-        'WhiteToolStripMenuItem1
-        '
-        Me.WhiteToolStripMenuItem1.Name = "WhiteToolStripMenuItem1"
-        Me.WhiteToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
-        Me.WhiteToolStripMenuItem1.Text = "White"
-        '
-        'RuneScapeBlueToolStripMenuItem1
-        '
-        Me.RuneScapeBlueToolStripMenuItem1.Name = "RuneScapeBlueToolStripMenuItem1"
-        Me.RuneScapeBlueToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
-        Me.RuneScapeBlueToolStripMenuItem1.Text = "RuneScape Blue"
         '
         'tracker
         '
@@ -347,5 +340,4 @@ Partial Class tracker
     Friend WithEvents TextColourToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BlackToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents WhiteToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents RuneScapeBlueToolStripMenuItem1 As ToolStripMenuItem
 End Class

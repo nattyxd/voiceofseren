@@ -308,14 +308,4 @@
             End If
         Next
     End Sub
-
-    Private Sub RuneScapeBlueToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RuneScapeBlueToolStripMenuItem1.Click
-        Dim SingleControl As Control
-        For Each SingleControl In Me.Controls
-            Dim chk As CheckBox = TryCast(SingleControl, CheckBox)
-            If chk IsNot Nothing Then
-                chk.ForeColor = Color.FromArgb(12, 26, 35)
-            End If
-        Next
-    End Sub
 End Class
