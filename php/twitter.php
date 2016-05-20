@@ -3,6 +3,7 @@
   $override = 0; // set this to 1 to override the api call cap functionality
   $lastcalledAPI = 'lastupdated.txt'; //we need the file containing the time that the app last pulled data from the twitter api (so we don't go over our request count)
   require 'api_key.php'; // we can't do anything without an API key - see the sample api key file for example.
+  $cacheValue = 'cache.txt'; // the file to store the result of the API request in.
 
   # Author: Nathaniel Baulch-Jones
   # Date : 20th May 2016
@@ -13,11 +14,15 @@
   $time = time();
 
   if ((date('i') > 0) && (isAPIDataOld() === true) || ($override === 1)){
-    echo "Condition Successful: Will perform an API call. <br />";
+    // echo "Condition Successful: Will perform an API call. <br />";
     doTwitter();
   }
   else{
-    echo "Did not allow API to call. <br />";
+    $stream = fopen($cacheValue,"r");
+    $fileContent = stream_get_contents($stream);
+    fclose($stream);
+    echo $fileContent;
+    // echo "Did not allow API to call. <br />";
     die(); // don't allow code to keep executing past this point.
   }
 
@@ -34,7 +39,7 @@
 
     if ($fileContent == ""){
       // the file was empty (not previously written to?) return true
-      echo "File was empty..<br />";
+      // echo "File was empty..<br />";
       return true;
     }
     else{
@@ -42,14 +47,14 @@
       $fileContent = $fileContent + 0; // make sure the contents in the file is cast to an int
       $time = $time + 0;
       if(($time - $fileContent) > $desiredSecondsOld){
-        echo "The time difference was greater than " . $desiredSecondsOld . "s. To be precise, the time difference was: " . ($time - $fileContent) . " seconds.<br />";
+        // echo "The time difference was greater than " . $desiredSecondsOld . "s. To be precise, the time difference was: " . ($time - $fileContent) . " seconds.<br />";
         return true;
       }
       else{
-        echo "File existed, but condition was not met (time difference not great enough)<br />";
-        echo "File contents was: '" . $fileContent . "'<br />";
-        echo "Current Epoch time is: " . time() . "<br />";
-        echo "This is a time difference of just " . ($fileContent - $time) . " seconds.<br />";
+        // echo "File existed, but condition was not met (time difference not great enough)<br />";
+        // echo "File contents was: '" . $fileContent . "'<br />";
+        // echo "Current Epoch time is: " . time() . "<br />";
+        // echo "This is a time difference of just " . ($fileContent - $time) . " seconds.<br />";
         return false;
       }
     }
@@ -59,6 +64,7 @@
 
   function doTwitter(){ // function to perform our API call to Twitter. Credit for lots of this code: http://stackoverflow.com/questions/12916539/simplest-php-example-for-retrieving-user-timeline-with-twitter-api-version-1-1
     global $lastcalledAPI;
+    global $cacheValue;
     global $time;
     global $token;
     global $token_secret;
@@ -141,6 +147,7 @@
 
     //print_r($twitter_data); // only uncomment if you really want verbose output from the api
     $checkArray = array();
+    $filteredArray = array();
 
     foreach ($twitter_data as $arrayitem) {
         $valueToAdd = $arrayitem->text;
@@ -148,6 +155,45 @@
         $checkArray[] = $valueToAdd;
     }
 
+    foreach ($checkArray as $itemToCheck){
+      if(strpos($itemToCheck, "active")){
+        $filteredArray[] = $itemToCheck;
+      }
+    }
+
+    $ourAnswer = $filteredArray[0]; // the districts we care about will be held in here.
+    //echo $ourAnswer;
+
+    if($ourAnswer == ""){ // we didn't get an answer..
+      die("Error: filteredArray was null!");
+    }
+
+    if (strpos($ourAnswer, "amlodd") !== false){
+      $output = $output . "a";
+    }
+    if (strpos($ourAnswer, "cadarn") !== false){
+      $output = $output . "b";
+    }
+    if (strpos($ourAnswer, "crwys") !== false){
+      $output = $output . "c";
+    }
+    if (strpos($ourAnswer, "hefin") !== false){
+      $output = $output . "d";
+    }
+    if (strpos($ourAnswer, "iorwerth") !== false){
+      $output = $output . "e";
+    }
+    if (strpos($ourAnswer, "ithell") !== false){
+      $output = $output . "f";
+    }
+    if (strpos($ourAnswer, "meilyr") !== false){
+      $output = $output . "g";
+    }
+    if (strpos($ourAnswer, "trahaearn") !== false){
+      $output = $output . "h";
+    }
+
+    echo $output;
 
 
     // once all this is done, we want to update the value held in the lastupdated file, to indicate that fresh data has just been loaded.
@@ -155,5 +201,9 @@
     fwrite($stream,$time);
     fclose($stream);
 
+    // we also want to save the value we just found into cache so we don't need to keep asking twitter
+    $stream = fopen($cacheValue,"w");
+    fwrite($stream,$output);
+    fclose($stream);
   }
 ?>
