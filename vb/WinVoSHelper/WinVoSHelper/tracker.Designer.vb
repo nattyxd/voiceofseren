@@ -52,6 +52,7 @@ Partial Class tracker
         Me.ShowIconOnTaskbarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HideAppToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitAppToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LockLocationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyContext.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -187,11 +188,11 @@ Partial Class tracker
         'notifyContext
         '
         Me.notifyContext.AllowMerge = False
-        Me.notifyContext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.alertOnUpdate, Me.AlertMeWhenClansForgetToolStripMenuItem, Me.BackgroundColourToolStripMenuItem, Me.TextColourToolStripMenuItem, Me.SetTransparencyToolStripMenuItem, Me.ShowIconOnTaskbarToolStripMenuItem, Me.HideAppToolStripMenuItem, Me.ExitAppToolStripMenuItem})
+        Me.notifyContext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.alertOnUpdate, Me.AlertMeWhenClansForgetToolStripMenuItem, Me.BackgroundColourToolStripMenuItem, Me.TextColourToolStripMenuItem, Me.SetTransparencyToolStripMenuItem, Me.LockLocationToolStripMenuItem, Me.ShowIconOnTaskbarToolStripMenuItem, Me.HideAppToolStripMenuItem, Me.ExitAppToolStripMenuItem})
         Me.notifyContext.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.notifyContext.Name = "notifyContext"
         Me.notifyContext.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.notifyContext.Size = New System.Drawing.Size(321, 180)
+        Me.notifyContext.Size = New System.Drawing.Size(321, 224)
         '
         'alertOnUpdate
         '
@@ -290,6 +291,12 @@ Partial Class tracker
         Me.ExitAppToolStripMenuItem.Size = New System.Drawing.Size(320, 22)
         Me.ExitAppToolStripMenuItem.Text = "Exit App"
         '
+        'LockLocationToolStripMenuItem
+        '
+        Me.LockLocationToolStripMenuItem.Name = "LockLocationToolStripMenuItem"
+        Me.LockLocationToolStripMenuItem.Size = New System.Drawing.Size(320, 22)
+        Me.LockLocationToolStripMenuItem.Text = "Lock Location (Hide Title Bar)"
+        '
         'tracker
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -349,4 +356,5 @@ Partial Class tracker
     Friend WithEvents BlackToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents WhiteToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ShowIconOnTaskbarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LockLocationToolStripMenuItem As ToolStripMenuItem
 End Class

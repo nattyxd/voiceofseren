@@ -228,20 +228,53 @@
 
         Select Case CInt(ck.Tag)
             Case 1 'Amlodd
-                amloddTime = (GetUnixTimestamp() + delayConstant)
+                If chk_Amlodd.CheckState = CheckState.Checked Then
+                    amloddTime = (GetUnixTimestamp() + delayConstant)
+                Else
+                    amloddTime = 0
+                End If
             Case 2 ' Cadarn
-                cadarnTime = (GetUnixTimestamp() + delayConstant)
+                If chk_Cadarn.CheckState = CheckState.Checked Then
+                    cadarnTime = (GetUnixTimestamp() + delayConstant)
+                Else
+                    cadarnTime = 0
+                End If
             Case 3 ' Crwys
-                crwysTime = (GetUnixTimestamp() + delayConstant)
+                If chk_Crwys.CheckState = CheckState.Checked Then
+                    crwysTime = (GetUnixTimestamp() + delayConstant)
+                Else
+                    crwysTime = 0
+                End If
             Case 4 ' Hefin
-                hefinTime = (GetUnixTimestamp() + delayConstant)
+                If chk_Hefin.CheckState = CheckState.Checked Then
+                    hefinTime = (GetUnixTimestamp() + delayConstant)
+                Else
+                    hefinTime = 0
+                End If
             Case 5 ' Iorwerth
-                iorwerthTime = (GetUnixTimestamp() + delayConstant)
+                If chk_Iorwerth.CheckState = CheckState.Checked Then
+                    iorwerthTime = (GetUnixTimestamp() + delayConstant)
+                Else
+                    iorwerthTime = 0
+                End If
             Case 6 ' Ithell
-                ithellTime = (GetUnixTimestamp() + delayConstant)
+                If chk_Ithell.CheckState = CheckState.Checked Then
+                    ithellTime = (GetUnixTimestamp() + delayConstant)
+                Else
+                    ithellTime = 0
+                End If
             Case 7 ' Meilyr
-                meilyrTime = (GetUnixTimestamp() + delayConstant)
+                If chk_Meilyr.CheckState = CheckState.Checked Then
+                    meilyrTime = (GetUnixTimestamp() + delayConstant)
+                Else
+                    meilyrTime = 0
+                End If
             Case 8 ' Trahaearn
+                If chk_Trahaearn.CheckState = CheckState.Checked Then
+                    trahaearnTime = (GetUnixTimestamp() + delayConstant)
+                Else
+                    trahaearnTime = 0
+                End If
         End Select
     End Sub
 
@@ -414,5 +447,17 @@
             MsgBox("Error occured while loading your presets. You will have to reselect options.", MsgBoxStyle.Information, "Couldn't load presets")
         End Try
 
+    End Sub
+
+    Private Sub LockLocationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LockLocationToolStripMenuItem.Click
+        If LockLocationToolStripMenuItem.CheckState = CheckState.Checked Then
+            LockLocationToolStripMenuItem.CheckState = CheckState.Unchecked
+            Me.FormBorderStyle = FormBorderStyle.FixedToolWindow
+            Me.Location = New Point(Me.Location.X - 8, Me.Location.Y - 31)
+        Else
+            LockLocationToolStripMenuItem.CheckState = CheckState.Checked
+            Me.FormBorderStyle = FormBorderStyle.None
+            Me.Location = New Point(Me.Location.X + 8, Me.Location.Y + 31)
+        End If
     End Sub
 End Class
