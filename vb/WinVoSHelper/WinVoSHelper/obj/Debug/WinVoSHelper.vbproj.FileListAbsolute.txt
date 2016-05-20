@@ -24,3 +24,5 @@ C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debu
 C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.tracker.resources
 C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.Resources.resources
 C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WinVoSHelper.vbproj.GenerateResource.Cache
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\obj\Debug\WindowsApplication1.transparency.resources
+C:\Users\Nat\Documents\GitHub\voiceofseren\vb\WinVoSHelper\WinVoSHelper\bin\Debug\winvoshelper.exe.config
