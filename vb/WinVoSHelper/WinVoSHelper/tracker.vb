@@ -99,19 +99,19 @@
 
     End Function
     Private Sub tracktime_Tick(sender As Object, e As EventArgs) Handles tracktime.Tick
-        If (My.Computer.Clock.LocalTime.Minute = 0 And My.Computer.Clock.LocalTime.Second = 20) Then ' refresh past the hour
+        If (My.Computer.Clock.LocalTime.Minute = 0 And My.Computer.Clock.LocalTime.Second = 30) Then ' refresh past the hour
             If syncFlag = 1 Then
                 browser.Navigate(browser.Url)
             End If
         End If
 
-        If (My.Computer.Clock.LocalTime.Minute = 0 And My.Computer.Clock.LocalTime.Second = 5) Then ' refresh past the hour
+        If (My.Computer.Clock.LocalTime.Minute = 0 And My.Computer.Clock.LocalTime.Second = 22) Then ' refresh past the hour
             If syncFlag = 0 Then
                 browser.Navigate(browser.Url)
             End If
         End If
 
-        If (My.Computer.Clock.LocalTime.Minute = 2 And My.Computer.Clock.LocalTime.Second = 15) Then ' refresh past the hour
+        If (My.Computer.Clock.LocalTime.Minute = 2 And My.Computer.Clock.LocalTime.Second = 0) Then ' refresh past the hour
             If syncFlag = 2 Then
                 browser.Navigate(browser.Url)
             End If

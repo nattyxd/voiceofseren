@@ -13,7 +13,7 @@
 
   $time = time();
 
-  if ((date('i') > 55) && (isAPIDataOld() === true) || ($override === 1)){
+  if (((date('i') > 58) || (date('i' < 2))) && (isAPIDataOld() === true) || ($override === 1)){
     // echo "Condition Successful: Will perform an API call. <br />";
     doTwitter();
   }
@@ -28,7 +28,7 @@
 
 
   function isAPIDataOld(){ // this function will return true if the data from the API is more than x seconds old.
-    $desiredSecondsOld = 30; // we want to return true if the data is older than the value specified here.
+    $desiredSecondsOld = 15; // we want to return true if the data is older than the value specified here.
 
     global $lastcalledAPI;
     global $time;
