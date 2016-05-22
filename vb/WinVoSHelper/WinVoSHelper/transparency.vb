@@ -5,5 +5,6 @@
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         tracker.Opacity = (trackBar.Value / 100)
+        Me.Close()
     End Sub
 End Class
