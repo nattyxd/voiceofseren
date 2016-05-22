@@ -62,17 +62,16 @@ The app has the following requirements:
 If you have these requirements and are still having issues, let me know, and I'll try and help you out.
 
 
-### Development
+## Development
 
 Want to fix my messy, rushed, source code? Please do! After I review your changes I'll merge them into the main project.
 
 If you want to see what I'm getting up to you can [follow me on twitter](https://twitter.com/natbaulchjones).
 
-### To do list
+## To do list
 
  - If I get feature requests I will add them here :)
 
-License
-----
+## License
 
 This project is licensed under The MIT License (MIT). Please feel free to do whatever you want with it, provided it isn't illegal or breaks Jagex's rules.
