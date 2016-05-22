@@ -1,7 +1,7 @@
-# RuneScape VoS Pickpocketing Assistant
+![RuneScape VoS Pickpocketing Assistant](https://raw.githubusercontent.com/nattyxd/voiceofseren/master/img/title.png "RuneScape VoS Pickpocketing Assistant")
 
 
-##### An app for Windows to help you keep track of RuneScape's Voice of Seren while you pickpocket.
+##### An unofficial app for Windows to help you keep track of RuneScape's Voice of Seren while you pickpocket. I am not affiliated with Jagex Ltd.
 
 
 
@@ -37,7 +37,7 @@ Looks matter! Here's what the app looks like by default:
 
 After some tweaking using the in app settings:
 
-![alt text](https://raw.githubusercontent.com/nattyxd/voiceofseren/master/img/tweaked_look.png "This is how the app looks in my interface")
+![This is how the app looks in my interface](https://raw.githubusercontent.com/nattyxd/voiceofseren/master/img/tweaked_look.png "This is how the app looks in my interface")
 
 A typical VoS change notification:
 
