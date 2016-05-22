@@ -15,7 +15,7 @@ _**This app aims to make your life easier by keeping track of both the Voice of 
 No. This app doesn't issue any commands for you, you are still required to play the game as you normally would. In the future I may implement a setting to automatically check the box indicating the timeout if I can verify this is not against the rules.
 
 ## How can I get it?
-You can download it here: **[![Windows Icon](https://raw.githubusercontent.com/nattyxd/voiceofseren/master/img/windowsicon.png "Download for Windows")Windows Download](binary/vosapp.exe)**
+You can download it here: **[![Windows Icon](https://raw.githubusercontent.com/nattyxd/voiceofseren/master/img/windowsicon.png "Download for Windows")Windows Download](https://github.com/nattyxd/voiceofseren/raw/master/binary/vosapp.exe)**
 
 ## App Features
   - Automatic notifications when the Voice of Seren changes, as well as visual indication.
